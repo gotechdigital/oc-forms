@@ -1,8 +1,8 @@
 {
     "name": "gotech/forms-plugin",
     "type": "october-plugin",
-    "description": "Create easy (and almost magic) AJAX forms",
+    "description": "OctoberCMS Forms",
     "keywords": ["october", "cms", "plugin", "forms", "magic forms"],
-    "homepage": "https://github.com/blakej115/magic-forms",
+    "homepage": "https://github.com/gotechdigital/oc-forms",
     "license": "MIT"
 }
