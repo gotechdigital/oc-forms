@@ -1,4 +1,4 @@
-<?php namespace BlakeJones\MagicForms\Traits;
+<?php namespace GoTech\Forms\Traits;
 
 use Input;
 use Request;

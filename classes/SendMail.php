@@ -1,10 +1,10 @@
 <?php
 
-namespace BlakeJones\MagicForms\Classes;
+namespace GoTech\Forms\Classes;
 
 use Mail;
 use System\Models\MailTemplate;
-use BlakeJones\MagicForms\Classes\BackendHelpers;
+use GoTech\Forms\Classes\BackendHelpers;
 
 class SendMail {
 
@@ -23,7 +23,7 @@ class SendMail {
         if (is_array($properties['mail_recipients']) || is_array($properties['mail_bcc'])) {
 
             // CUSTOM TEMPLATE
-            $template = isset($properties['mail_template']) && $properties['mail_template'] != '' && MailTemplate::findOrMakeTemplate($properties['mail_template']) ? $properties['mail_template'] : 'blakejones.magicforms::mail.notification';
+            $template = isset($properties['mail_template']) && $properties['mail_template'] != '' && MailTemplate::findOrMakeTemplate($properties['mail_template']) ? $properties['mail_template'] : 'gotech.forms::mail.notification';
 
             $data = [
                 'id'   => $record->id,
@@ -122,7 +122,7 @@ class SendMail {
         if (filter_var($to, FILTER_VALIDATE_EMAIL) && filter_var($from, FILTER_VALIDATE_EMAIL)) {
 
             // CUSTOM TEMPLATE
-            $template = isset($properties['mail_resp_template']) && $properties['mail_resp_template'] != '' && MailTemplate::findOrMakeTemplate($properties['mail_resp_template']) ? $properties['mail_resp_template'] : 'blakejones.magicforms::mail.autoresponse';
+            $template = isset($properties['mail_resp_template']) && $properties['mail_resp_template'] != '' && MailTemplate::findOrMakeTemplate($properties['mail_resp_template']) ? $properties['mail_resp_template'] : 'gotech.forms::mail.autoresponse';
 
             Mail::sendTo($to, $template, [
                     'id'   => $record->id,

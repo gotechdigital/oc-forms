@@ -1,6 +1,6 @@
 <?php
 
-    namespace BlakeJones\MagicForms\Updates;
+    namespace GoTech\Forms\Updates;
 
     use Schema;
     use October\Rain\Database\Updates\Migration;
@@ -8,15 +8,15 @@
     class AddGroupField extends Migration {
 
         public function up() {
-            Schema::table('blakejones_magicforms_records', function ($table) {
+            Schema::table('gotech_forms_records', function ($table) {
                 $table->string('group')->default('(Empty)')->after('id');
             });
 
         }
 
         public function down() {
-            if(Schema::hasColumn('blakejones_magicforms_records', 'group')) {
-                Schema::table('blakejones_magicforms_records', function ($table) {
+            if(Schema::hasColumn('gotech_forms_records', 'group')) {
+                Schema::table('gotech_forms_records', function ($table) {
                     $table->dropColumn('group');
                 });
             }

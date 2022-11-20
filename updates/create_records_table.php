@@ -1,6 +1,6 @@
 <?php
 
-namespace BlakeJones\MagicForms\Updates;
+namespace GoTech\Forms\Updates;
 
 use Schema;
 use October\Rain\Database\Schema\Blueprint;
@@ -9,7 +9,7 @@ use October\Rain\Database\Updates\Migration;
 class CreateRecordsTable extends Migration {
 
     public function up() {
-        Schema::create('blakejones_magicforms_records', function (Blueprint $table) {
+        Schema::create('gotech_forms_records', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->text('form_data')->nullable();
@@ -20,7 +20,7 @@ class CreateRecordsTable extends Migration {
     }
 
     public function down() {
-        Schema::dropIfExists('blakejones_magicforms_records');
+        Schema::dropIfExists('gotech_forms_records');
     }
 
 }

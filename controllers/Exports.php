@@ -1,17 +1,17 @@
 <?php
 
-namespace BlakeJones\MagicForms\Controllers;
+namespace GoTech\Forms\Controllers;
 
 use BackendMenu, Response;
 use Backend\Classes\Controller;
 use League\Csv\AbstractCsv;
 use League\Csv\Writer as CsvWriter;
 use SplTempFileObject;
-use BlakeJones\MagicForms\Models\Record;
+use GoTech\Forms\Models\Record;
 
 class Exports extends Controller {
 
-    public $requiredPermissions = ['blakejones.magicforms.access_exports'];
+    public $requiredPermissions = ['gotech.forms.access_exports'];
 
     public $implement = [
         'Backend.Behaviors.FormController',
@@ -21,11 +21,11 @@ class Exports extends Controller {
 
     public function __construct() {
         parent::__construct();
-        BackendMenu::setContext('BlakeJones.MagicForms', 'forms', 'exports');
+        BackendMenu::setContext('GoTech.Forms', 'forms', 'exports');
     }
 
     public function index() {
-        $this->pageTitle = e(trans('blakejones.magicforms::lang.controllers.exports.title'));
+        $this->pageTitle = e(trans('gotech.forms::lang.controllers.exports.title'));
         $this->create('frontend');
     }
 
@@ -72,10 +72,10 @@ class Exports extends Controller {
         // METADATA HEADERS
         if (post('Record.options_metadata')) {
             $meta_headers = [
-                e(trans('blakejones.magicforms::lang.controllers.records.columns.id')),
-                e(trans('blakejones.magicforms::lang.controllers.records.columns.group')),
-                e(trans('blakejones.magicforms::lang.controllers.records.columns.ip')),
-                e(trans('blakejones.magicforms::lang.controllers.records.columns.created_at')),
+                e(trans('gotech.forms::lang.controllers.records.columns.id')),
+                e(trans('gotech.forms::lang.controllers.records.columns.group')),
+                e(trans('gotech.forms::lang.controllers.records.columns.ip')),
+                e(trans('gotech.forms::lang.controllers.records.columns.created_at')),
             ];
             $headers = array_merge($meta_headers, $headers);
         }

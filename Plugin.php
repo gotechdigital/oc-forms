@@ -1,25 +1,25 @@
 <?php
 
-    namespace BlakeJones\MagicForms;
+    namespace GoTech\Forms;
 
     use Backend, Lang, Validator;
     use System\Classes\PluginBase;
     use System\Classes\SettingsManager;
-    use BlakeJones\MagicForms\Classes\BackendHelpers;
-    use BlakeJones\MagicForms\Classes\GDPR;
-    use BlakeJones\MagicForms\Classes\ReCaptchaValidator;
-    use BlakeJones\MagicForms\Classes\UnreadRecords;
-    use BlakeJones\MagicForms\Models\Settings;
+    use GoTech\Forms\Classes\BackendHelpers;
+    use GoTech\Forms\Classes\GDPR;
+    use GoTech\Forms\Classes\ReCaptchaValidator;
+    use GoTech\Forms\Classes\UnreadRecords;
+    use GoTech\Forms\Models\Settings;
 
     class Plugin extends PluginBase {
 
         public function pluginDetails() {
             return [
-                'name'        => 'blakejones.magicforms::lang.plugin.name',
-                'description' => 'blakejones.magicforms::lang.plugin.description',
+                'name'        => 'gotech.forms::lang.plugin.name',
+                'description' => 'gotech.forms::lang.plugin.description',
                 'author'      => 'Martin M. (Forked by Blake Jones)',
                 'icon'        => 'icon-bolt',
-                'homepage'    => 'https://github.com/blakej115/magic-forms'
+                'homepage'    => 'https://github.com/gotechdigital/oc-forms'
             ];
         }
 
@@ -27,25 +27,25 @@
             if(Settings::get('global_hide_button', false)) { return; }
             return [
                 'forms' => [
-                    'label'       => 'blakejones.magicforms::lang.menu.label',
+                    'label'       => 'gotech.forms::lang.menu.label',
                     'icon'        => 'icon-bolt',
-                    'iconSvg'     => 'plugins/blakejones/magicforms/assets/imgs/icon.svg',
-                    'url'         => BackendHelpers::getBackendURL(['blakejones.magicforms.access_records' => 'blakejones/magicforms/records', 'blakejones.magicforms.access_exports' => 'blakejones/magicforms/exports'], 'blakejones.magicforms.access_records'),
-                    'permissions' => ['blakejones.magicforms.*'],
+                    'iconSvg'     => 'plugins/gotech/forms/assets/imgs/icon.svg',
+                    'url'         => BackendHelpers::getBackendURL(['gotech.forms.access_records' => 'gotech/forms/records', 'gotech.forms.access_exports' => 'gotech/forms/exports'], 'gotech.forms.access_records'),
+                    'permissions' => ['gotech.forms.*'],
                     'sideMenu' => [
                         'records' => [
-                            'label'        => 'blakejones.magicforms::lang.menu.records.label',
+                            'label'        => 'gotech.forms::lang.menu.records.label',
                             'icon'         => 'icon-database',
-                            'url'          => Backend::url('blakejones/magicforms/records'),
-                            'permissions'  => ['blakejones.magicforms.access_records'],
+                            'url'          => Backend::url('gotech/forms/records'),
+                            'permissions'  => ['gotech.forms.access_records'],
                             'counter'      => UnreadRecords::getTotal(),
                             'counterLabel' => 'Un-Read Messages'
                         ],
                         'exports' => [
-                            'label'       => 'blakejones.magicforms::lang.menu.exports.label',
+                            'label'       => 'gotech.forms::lang.menu.exports.label',
                             'icon'        => 'icon-download',
-                            'url'         => Backend::url('blakejones/magicforms/exports'),
-                            'permissions' => ['blakejones.magicforms.access_exports']
+                            'url'         => Backend::url('gotech/forms/exports'),
+                            'permissions' => ['gotech.forms.access_exports']
                         ],
                     ]
                 ]
@@ -55,12 +55,12 @@
         public function registerSettings() {
             return [
                 'config' => [
-                    'label'       => 'blakejones.magicforms::lang.menu.label',
-                    'description' => 'blakejones.magicforms::lang.menu.settings',
+                    'label'       => 'gotech.forms::lang.menu.label',
+                    'description' => 'gotech.forms::lang.menu.settings',
                     'category'    => SettingsManager::CATEGORY_CMS,
                     'icon'        => 'icon-bolt',
-                    'class'       => 'BlakeJones\MagicForms\Models\Settings',
-                    'permissions' => ['blakejones.magicforms.access_settings'],
+                    'class'       => 'GoTech\Forms\Models\Settings',
+                    'permissions' => ['gotech.forms.access_settings'],
                     'order'       => 500
                 ]
             ];
@@ -68,31 +68,31 @@
 
         public function registerPermissions() {
             return [
-                'blakejones.magicforms.access_settings' => ['tab' => 'blakejones.magicforms::lang.permissions.tab', 'label' => 'blakejones.magicforms::lang.permissions.access_settings'],
-                'blakejones.magicforms.access_records'  => ['tab' => 'blakejones.magicforms::lang.permissions.tab', 'label' => 'blakejones.magicforms::lang.permissions.access_records'],
-                'blakejones.magicforms.access_exports'  => ['tab' => 'blakejones.magicforms::lang.permissions.tab', 'label' => 'blakejones.magicforms::lang.permissions.access_exports'],
-                'blakejones.magicforms.gdpr_cleanup'    => ['tab' => 'blakejones.magicforms::lang.permissions.tab', 'label' => 'blakejones.magicforms::lang.permissions.gdpr_cleanup'],
+                'gotech.forms.access_settings' => ['tab' => 'gotech.forms::lang.permissions.tab', 'label' => 'gotech.forms::lang.permissions.access_settings'],
+                'gotech.forms.access_records'  => ['tab' => 'gotech.forms::lang.permissions.tab', 'label' => 'gotech.forms::lang.permissions.access_records'],
+                'gotech.forms.access_exports'  => ['tab' => 'gotech.forms::lang.permissions.tab', 'label' => 'gotech.forms::lang.permissions.access_exports'],
+                'gotech.forms.gdpr_cleanup'    => ['tab' => 'gotech.forms::lang.permissions.tab', 'label' => 'gotech.forms::lang.permissions.gdpr_cleanup'],
             ];
         }
 
         public function registerComponents() {
             return [
-                'BlakeJones\MagicForms\Components\GenericForm' => 'genericForm',
-                'BlakeJones\MagicForms\Components\UploadForm'  => 'uploadForm',
-                'BlakeJones\MagicForms\Components\EmptyForm'   => 'emptyForm',
+                'GoTech\Forms\Components\GenericForm' => 'genericForm',
+                'GoTech\Forms\Components\UploadForm'  => 'uploadForm',
+                'GoTech\Forms\Components\EmptyForm'   => 'emptyForm',
             ];
         }
 
         public function registerMailTemplates() {
             return [
-                'blakejones.magicforms::mail.notification' => Lang::get('blakejones.magicforms::lang.mails.form_notification.description'),
-                'blakejones.magicforms::mail.autoresponse' => Lang::get('blakejones.magicforms::lang.mails.form_autoresponse.description'),
+                'gotech.forms::mail.notification' => Lang::get('gotech.forms::lang.mails.form_notification.description'),
+                'gotech.forms::mail.autoresponse' => Lang::get('gotech.forms::lang.mails.form_autoresponse.description'),
             ];
         }
 
         public function register() {
             $this->app->resolving('validator', function($validator) {
-                Validator::extend('recaptcha', 'BlakeJones\MagicForms\Classes\ReCaptchaValidator@validateReCaptcha');
+                Validator::extend('recaptcha', 'GoTech\Forms\Classes\ReCaptchaValidator@validateReCaptcha');
             });
         }
 

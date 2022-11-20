@@ -1,13 +1,13 @@
 scopes:
 
     group:
-        label     : blakejones.magicforms::lang.controllers.records.columns.group
+        label     : gotech.forms::lang.controllers.records.columns.group
         type      : group
-        modelClass: BlakeJones\MagicForms\Models\Record
+        modelClass: GoTech\Forms\Models\Record
         options   : filterGroups
         conditions: "`group` in (:filtered)"
 
     created_at:
-        label     : blakejones.magicforms::lang.controllers.records.columns.created_at
+        label     : gotech.forms::lang.controllers.records.columns.created_at
         type      : daterange
         conditions: created_at >= ':after' AND created_at <= ':before'

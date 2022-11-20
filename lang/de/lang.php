@@ -96,7 +96,7 @@
                 'mail_recipients'   => ['title' => 'Empfänger'         , 'description' => 'E-Mail-Empfänger angeben. Verwenden Sie E-Mail-Adressen als Schlüssel und Namen als Werte.'],
                 'mail_bcc'          => ['title' => 'BCC'                , 'description' => 'Sende blind carbon copy (BCC) zur folgenden Empfängern (Füge eine E-Mail Adresse per Zeile ein)'],
                 'mail_replyto'      => ['title' => 'Empfänger E-Mail Feld', 'description' => 'Formular Feld das die E-Mail Adresse enthält. Diese Adresse wird als Empfänger Adresse benutzt.'],
-                'mail_template'     => ['title' => 'E-Mail Vorlage'      , 'description' => 'Benutze eigene E-Mail Vorlagen. Gebe einen Vorlagen Code ein wie z.B. "blakejones.magicforms::mail.notification" (Kann im Einstellungen der E-Mail Vorlagen im Backend gefunden werden). Leer lassen für Standardvorlage.'],
+                'mail_template'     => ['title' => 'E-Mail Vorlage'      , 'description' => 'Benutze eigene E-Mail Vorlagen. Gebe einen Vorlagen Code ein wie z.B. "gotech.forms::mail.notification" (Kann im Einstellungen der E-Mail Vorlagen im Backend gefunden werden). Leer lassen für Standardvorlage.'],
                 'mail_uploads'      => ['title' => 'Sende Uploads'       , 'description' => 'Sende Uploads als Anhang'],
                 'mail_resp_enabled' => ['title' => 'Sende Auto-Antwort' , 'description' => 'Sende eine automatische Antwort E-Mail zu der Person die dein Formular ausgfüllt.'],
                 'mail_resp_field'   => ['title' => 'E-Mail Feld'        , 'description' => 'Formular Feld das die E-Mail Adresse enthät für die automatische Antwort'],

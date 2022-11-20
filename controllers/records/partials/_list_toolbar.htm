@@ -1,7 +1,7 @@
 <div id="records-toolbar" data-control="toolbar">
 
     <?php
-        echo $this->makePartial('$/blakejones/magicforms/controllers/records/partials/_action_button.htm', [
+        echo $this->makePartial('$/gotech/forms/controllers/records/partials/_action_button.htm', [
             'type'            => 'danger',
             'icon'            => 'oc-icon-trash',
             'label'           => e(trans('backend::lang.list.delete_selected')),
@@ -25,10 +25,10 @@
 
     <div class="btn-group">
     <?php
-        echo $this->makePartial('$/blakejones/magicforms/controllers/records/partials/_action_button.htm', [
+        echo $this->makePartial('$/gotech/forms/controllers/records/partials/_action_button.htm', [
             'type'            => 'default',
             'icon'            => 'oc-icon-eye-slash',
-            'label'           => e(trans('blakejones.magicforms::lang.controllers.records.buttons.unread')),
+            'label'           => e(trans('gotech.forms::lang.controllers.records.buttons.unread')),
             'onclick'         => "$(this).data('request-data', { state: 'unread', checked: $('.control-list').listWidget('getChecked') })",
             'needs_selected'  => true,
             'request'         => 'onReadState',
@@ -41,10 +41,10 @@
             ",
         ]);
 
-        echo $this->makePartial('$/blakejones/magicforms/controllers/records/partials/_action_button.htm', [
+        echo $this->makePartial('$/gotech/forms/controllers/records/partials/_action_button.htm', [
             'type'            => 'default',
             'icon'            => 'oc-icon-eye',
-            'label'           => e(trans('blakejones.magicforms::lang.controllers.records.buttons.read')),
+            'label'           => e(trans('gotech.forms::lang.controllers.records.buttons.read')),
             'onclick'         => "$(this).data('request-data', { state: 'read', checked: $('.control-list').listWidget('getChecked') })",
             'needs_selected'  => true,
             'request'         => 'onReadState',
@@ -60,13 +60,13 @@
     </div>
 
     <?php
-        if(BlakeJones\MagicForms\Models\Settings::get('gdpr_enable')) {
-            echo $this->makePartial('$/blakejones/magicforms/controllers/records/partials/_action_button.htm', [
+        if(GoTech\Forms\Models\Settings::get('gdpr_enable')) {
+            echo $this->makePartial('$/gotech/forms/controllers/records/partials/_action_button.htm', [
                 'type'            => 'danger',
                 'icon'            => 'oc-icon-history',
-                'label'           => e(trans('blakejones.magicforms::lang.controllers.records.buttons.gdpr_clean')),
+                'label'           => e(trans('gotech.forms::lang.controllers.records.buttons.gdpr_clean')),
                 'request'         => 'onGDPRClean',
-                'request_confirm' => e(trans('blakejones.magicforms::lang.controllers.records.alerts.gdpr_confirm')),
+                'request_confirm' => e(trans('gotech.forms::lang.controllers.records.alerts.gdpr_confirm')),
                 'request_success' => "
                     $('#records-toolbar').find('button').blur();
                     $.oc.sideNav.setCounter('forms/records', data.counter);

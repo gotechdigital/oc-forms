@@ -1,14 +1,14 @@
 <?php
 
-namespace BlakeJones\MagicForms\Tests\Classes;
+namespace GoTech\Forms\Tests\Classes;
 
 use PluginTestCase;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use System\Classes\PluginManager;
-use BlakeJones\MagicForms\Classes\GDPR;
-use BlakeJones\MagicForms\Models\Record;
-use BlakeJones\MagicForms\Models\Settings;
+use GoTech\Forms\Classes\GDPR;
+use GoTech\Forms\Models\Record;
+use GoTech\Forms\Models\Settings;
 
 class GDPRTest extends PluginTestCase {
 

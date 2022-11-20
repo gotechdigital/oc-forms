@@ -1,2 +1,2 @@
-form      : $/blakejones/magicforms/models/export/fields.yaml
-modelClass: BlakeJones\MagicForms\Models\Record
+form      : $/gotech/forms/models/export/fields.yaml
+modelClass: GoTech\Forms\Models\Record

@@ -1,7 +1,7 @@
-list            : $/blakejones/magicforms/models/record/columns.yaml
-modelClass      : BlakeJones\MagicForms\Models\Record
-title           : blakejones.magicforms::lang.controllers.records.title
-recordUrl       : blakejones/magicforms/records/view/:id
+list            : $/gotech/forms/models/record/columns.yaml
+modelClass      : GoTech\Forms\Models\Record
+title           : gotech.forms::lang.controllers.records.title
+recordUrl       : gotech/forms/records/view/:id
 noRecordsMessage: backend::lang.list.no_records
 recordsPerPage  : 20
 showSetup       : true

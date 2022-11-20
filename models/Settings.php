@@ -1,6 +1,6 @@
 <?php
 
-    namespace BlakeJones\MagicForms\Models;
+    namespace GoTech\Forms\Models;
 
     use Lang, Model;
     use Cms\Classes\Theme;
@@ -11,13 +11,13 @@
         use \October\Rain\Database\Traits\Validation;
 
         public $implement      = ['System.Behaviors.SettingsModel'];
-        public $settingsCode   = 'blakejones_magicforms_settings';
+        public $settingsCode   = 'gotech_forms_settings';
         public $settingsFields = 'fields.yaml';
 
         // public function __construct() {
         //     $this->attributes = [
-        //         'global_messages_success' => Lang::get('blakejones.magicforms::lang.settings.global_messages_success.default'),
-        //         'global_messages_errors'  => Lang::get('blakejones.magicforms::lang.settings.global_messages_errors.default'),
+        //         'global_messages_success' => Lang::get('gotech.forms::lang.settings.global_messages_success.default'),
+        //         'global_messages_errors'  => Lang::get('gotech.forms::lang.settings.global_messages_errors.default'),
         //     ];
         //     parent::__construct();
         // }

@@ -1,11 +1,11 @@
 <?php
 
-namespace BlakeJones\MagicForms\Classes;
+namespace GoTech\Forms\Classes;
 
 use Flash;
 use Request;
-use BlakeJones\MagicForms\Models\Record;
-use BlakeJones\MagicForms\Models\Settings;
+use GoTech\Forms\Models\Record;
+use GoTech\Forms\Models\Settings;
 use Carbon\Carbon;
 use October\Rain\Exception\ApplicationException;
 use October\Rain\Exception\ValidationException;
@@ -18,7 +18,7 @@ class GDPR {
         $gdpr_days   = Settings::get('gdpr_days'  , false);
 
         if (!$gdpr_enable) {
-            Flash::error(e(trans('blakejones.magicforms::lang.classes.GDPR.alert_gdpr_disabled')));
+            Flash::error(e(trans('gotech.forms::lang.classes.GDPR.alert_gdpr_disabled')));
             return;
         }
 
@@ -28,7 +28,7 @@ class GDPR {
             return $rows;
         }
 
-        Flash::error(e(trans('blakejones.magicforms::lang.classes.GDPR.alert_invalid_gdpr')));
+        Flash::error(e(trans('gotech.forms::lang.classes.GDPR.alert_invalid_gdpr')));
 
     }
 

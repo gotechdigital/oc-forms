@@ -1,6 +1,6 @@
 <?php
 
-    namespace BlakeJones\MagicForms\Models;
+    namespace GoTech\Forms\Models;
 
     use Model;
 
@@ -8,7 +8,7 @@
 
         use \October\Rain\Database\Traits\SoftDelete;
 
-        public $table = 'blakejones_magicforms_records';
+        public $table = 'gotech_forms_records';
 
         protected $dates = ['deleted_at'];
 

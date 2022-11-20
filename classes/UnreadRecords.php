@@ -1,14 +1,14 @@
 <?php
 
-namespace BlakeJones\MagicForms\Classes;
+namespace GoTech\Forms\Classes;
 
 use Schema;
-use BlakeJones\MagicForms\Models\Record;
+use GoTech\Forms\Models\Record;
 
 class UnreadRecords {
 
     public static function getTotal() {
-        if (Schema::hasTable('blakejones_magicforms_records')) {
+        if (Schema::hasTable('gotech_forms_records')) {
             $unread = Record::where('unread', 1)->count();
         }
 

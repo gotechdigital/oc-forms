@@ -1,6 +1,6 @@
 <?php
 
-namespace BlakeJones\MagicForms\Tests\Classes;
+namespace GoTech\Forms\Tests\Classes;
 
 use Backend;
 use BackendAuth;
@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Auth;
 use System\Classes\PluginManager;
 use Backend\Models\User;
-use BlakeJones\MagicForms\Classes\BackendHelpers;
+use GoTech\Forms\Classes\BackendHelpers;
 
 class BackendHelpersTest extends PluginTestCase {
 
@@ -25,12 +25,12 @@ class BackendHelpersTest extends PluginTestCase {
      */
     public function testGetBackendUrl() {
         $this->_loginUser();
-        $expect = Backend::url("blakejones/magicforms/records");
+        $expect = Backend::url("gotech/forms/records");
         $bh = new BackendHelpers();
         $this->assertEquals($expect, $bh->getBackendURL([
-            'blakejones.magicforms.access_records' => 'blakejones/magicforms/records',
-            'blakejones.magicforms.access_exports' => 'blakejones/magicforms/exports'
-        ], 'blakejones.magicforms.access_records'));
+            'gotech.forms.access_records' => 'gotech/forms/records',
+            'gotech.forms.access_exports' => 'gotech/forms/exports'
+        ], 'gotech.forms.access_records'));
     }
 
     /**

@@ -1,4 +1,4 @@
-<?php namespace BlakeJones\MagicForms\Traits;
+<?php namespace GoTech\Forms\Traits;
 
 use Input;
 use Cms\Classes\ComponentBase;
@@ -9,7 +9,7 @@ use ApplicationException;
 trait FileUploader
 {
 
-    use \BlakeJones\MagicForms\Traits\ComponentUtils;
+    use \GoTech\Forms\Traits\ComponentUtils;
 
     public $maxSize;
     public $placeholderText;

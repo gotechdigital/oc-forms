@@ -1,6 +1,6 @@
 <?php
 
-namespace BlakeJones\MagicForms\Classes;
+namespace GoTech\Forms\Classes;
 
 use Backend, BackendAuth;
 

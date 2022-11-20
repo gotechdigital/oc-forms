@@ -1,17 +1,17 @@
 <?php
 
-    namespace BlakeJones\MagicForms\Updates;
+    namespace GoTech\Forms\Updates;
 
     use Schema;
     use October\Rain\Database\Updates\Migration;
-    use BlakeJones\MagicForms\Models\Record;
+    use GoTech\Forms\Models\Record;
 
     class AddUnreadField extends Migration {
 
         public function up() {
 
             // CREATE FIELD
-            Schema::table('blakejones_magicforms_records', function ($table) {
+            Schema::table('gotech_forms_records', function ($table) {
                 $table->boolean('unread')->default(1)->after('ip');
             });
             
@@ -21,8 +21,8 @@
         }
 
         public function down() {
-            if(Schema::hasColumn('blakejones_magicforms_records', 'unread')) {
-                Schema::table('blakejones_magicforms_records', function ($table) {
+            if(Schema::hasColumn('gotech_forms_records', 'unread')) {
+                Schema::table('gotech_forms_records', function ($table) {
                     $table->dropColumn('unread');
                 });
             }

@@ -1,15 +1,15 @@
 <?php
 
-    namespace BlakeJones\MagicForms\Components;
+    namespace GoTech\Forms\Components;
 
-    use BlakeJones\MagicForms\Classes\MagicForm;
+    use GoTech\Forms\Classes\MagicForm;
 
     class GenericForm extends MagicForm {
 
         public function componentDetails() {
             return [
-                'name'        => 'blakejones.magicforms::lang.components.generic_form.name',
-                'description' => 'blakejones.magicforms::lang.components.generic_form.description',
+                'name'        => 'gotech.forms::lang.components.generic_form.name',
+                'description' => 'gotech.forms::lang.components.generic_form.description',
             ];
         }
 
